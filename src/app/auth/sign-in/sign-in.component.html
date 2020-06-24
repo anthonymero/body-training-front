@@ -1,12 +1,12 @@
 <mat-card class="signin-card">
-    <mat-card-header>
+    <mat-card-header class="signin-card-header">
+        <mat-card-title class="signin-card-header-title">My body training</mat-card-title>
         <div mat-card-avatar class="signin-card-header-image"></div>
-        <mat-card-title>Connexion</mat-card-title>
     </mat-card-header>
 
 
     <form class="signin-card-form" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-        <mat-card-content>
+        <mat-card-content class="signin-card-form-content">
             <mat-form-field>
                 <mat-label>Nom</mat-label>
                 <input type="text" matInput formControlName="lastname" [errorStateMatcher]="matcher">
@@ -26,10 +26,12 @@
                 <mat-label>password</mat-label>
                 <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher">
             </mat-form-field>
+
+
         </mat-card-content>
-        <mat-card-actions>
-            <button type="submit" mat-button [disabled]="!signinForm.valid">Connexion</button>
-            <button mat-button>Créer un compte</button>
+        <mat-card-actions class="signin-card-form-actions">
+            <button type="submit" mat-flat-button color="primary" [disabled]="!signinForm.valid">Connexion</button>
+            <button mat-flat-button (click)="onCreateAccount()">Créer un compte</button>
 
         </mat-card-actions>
     </form>

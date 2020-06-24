@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,6 +15,7 @@ loggedIn: boolean;
 
   constructor(
     private readonly authService: AuthService,
+    private router: Router,
     private readonly fb: FormBuilder
   ) { }
 
@@ -45,6 +47,11 @@ loggedIn: boolean;
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.signinForm.value);
+  }
+
+  onCreateAccount() {
+    this.router.navigate(['/signup']);
+
   }
 
 }
