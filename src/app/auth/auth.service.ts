@@ -7,6 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
+  // tslint:disable-next-line:variable-name
   protected _auth0Client: WebAuth;
   private _accessToken: string;
   private _idToken: string;

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'body-training-angular-app';
+
+  isConnected = false;
+
 }
