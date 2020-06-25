@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as auth0 from 'auth0-js';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import * as auth0 from 'auth0-js';
 import { environment } from 'src/environments/environment';
 
 (window as any).global = window;
@@ -10,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   // Create Auth0 web auth instance
   auth0 = new auth0.WebAuth({
-    ClientID: environment.auth.clientID,
+    clientID: environment.auth.clientID,
     domain: environment.auth.domain,
     responseType: 'token',
     redirectUri: environment.auth.redirect,
@@ -53,6 +52,8 @@ export class AuthService {
     this.auth0.checkSession({}, (err, authResult) => {
       if (authResult && authResult.accessToken) {
         this.getUserInfo(authResult);
+      } else {
+        console.log('error', err.error);
       }
     });
   }

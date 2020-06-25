@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-signinForm: FormGroup;
-loggedIn: boolean;
+  signinForm: FormGroup;
+  loggedIn: boolean;
 
   constructor(
-    private readonly authService: AuthService,
+    public authService: AuthService,
     private router: Router,
     private readonly fb: FormBuilder
   ) { }
@@ -29,7 +29,7 @@ loggedIn: boolean;
   }
 
   isAuthenticated(): boolean {
-    return this.authService.isAuthenticated();
+    return this.authService.isLoggedIn;
   }
 
   login(): void {
@@ -41,7 +41,7 @@ loggedIn: boolean;
   }
 
   getProfile() {
-    return this.authService.getProfile();
+    return this.authService.userProfile;
   }
 
   onSubmit() {
@@ -50,7 +50,8 @@ loggedIn: boolean;
   }
 
   onCreateAccount() {
-    this.router.navigate(['/signup']);
+    console.log('create account');
+    // this.router.navigate(['/signup']);
 
   }
 
