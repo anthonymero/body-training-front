@@ -1,0 +1,19 @@
+<mat-toolbar class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-left-logo"></span>
+        <span class="navbar-left-title">My Body Training</span>
+    </div>
+
+    <div class="navbar-right">
+        <div class="navbar-right-profile" (click)="onViewProfile()"  *ngIf="isConnected">
+            <span class="navbar-right-profile-letters">
+                AM
+            </span>
+        </div>
+        <div class="navbar-right-logout" (click)="onLogout()" *ngIf="isConnected">
+            <span class="material-icons">
+                logout
+            </span>
+        </div>
+    </div>
+</mat-toolbar>
