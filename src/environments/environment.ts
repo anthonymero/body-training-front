@@ -9,7 +9,7 @@ export const environment = {
     clientID: 'zmDYcd0sUbs4FbDwF3EItwbHPwItqrsp',
     domain: 'dev-oh3t1cwg.auth0.com', // e.g., https://you.auth0.com/
     audience: 'http://localhost:3000', // e.g., http://localhost:3001
-    redirect: 'http://localhost:4200/login',
+    redirect: 'http://localhost:4200/callback',
     scope: 'openid profile email'
   }
 };
