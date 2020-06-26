@@ -17,7 +17,7 @@
             <mat-card-title>Exercices</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <button mat-button>Ajouter un exercice<mat-icon aria-hidden="false" aria-label="add training session icon">add</mat-icon></button>
+            <button mat-button (click)="onAddExercice()">Créer un exercice<mat-icon aria-hidden="false" aria-label="add training session icon">add</mat-icon></button>
             <button mat-button routerLink="/exercices">Voir les exercices<mat-icon aria-hidden="false" aria-label="see training sessions icon">arrow_forward_ios</mat-icon></button>
 
         </mat-card-content>
@@ -25,7 +25,15 @@
     </mat-card>
 
     <mat-card class="dashboard-card">
-        
+        <mat-card-header>
+            <mat-card-title>Mon physique</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <button mat-button (click)="onUpdateMyPhysic()">Mettre à jour<mat-icon aria-hidden="false" aria-label="add training session icon">add</mat-icon></button>
+            <button mat-button routerLink="/physic">Voir mon évolution<mat-icon aria-hidden="false" aria-label="see training sessions icon">arrow_forward_ios</mat-icon></button>
+
+        </mat-card-content>
+
     </mat-card>
 
 </div>

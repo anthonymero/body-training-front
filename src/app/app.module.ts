@@ -12,6 +12,9 @@ import { PhysicComponent } from './physic/physic.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TrainingSessionsComponent } from './training-sessions/training-sessions.component';
+import { ExerciceDetailComponent } from './exercices/exercice-detail/exercice-detail.component';
+import { ExerciceFormComponent } from './exercices/exercice-form/exercice-form.component';
+import { PhysicFormComponent } from './physic/physic-form/physic-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { TrainingSessionsComponent } from './training-sessions/training-sessions
     PhysicComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    TrainingSessionsComponent
+    TrainingSessionsComponent,
+    ExerciceDetailComponent,
+    ExerciceFormComponent,
+    PhysicFormComponent
   ],
   imports: [
     BrowserModule,

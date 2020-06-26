@@ -6,6 +6,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PhysicComponent } from './physic/physic.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TrainingSessionsComponent } from './training-sessions/training-sessions.component';
+import { ExerciceDetailComponent } from './exercices/exercice-detail/exercice-detail.component';
+import { ExerciceFormComponent } from './exercices/exercice-form/exercice-form.component';
+import { PhysicFormComponent } from './physic/physic-form/physic-form.component';
 
 
 const routes: Routes = [
@@ -18,12 +21,24 @@ const routes: Routes = [
     component: ExercicesComponent
   },
   {
+    path: 'exercices/new',
+    component: ExerciceFormComponent
+  },
+  {
+    path: 'exercices/:id',
+    component: ExerciceDetailComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent
   },
   {
     path: 'physic',
     component: PhysicComponent
+  },
+  {
+    path: 'physic/update',
+    component: PhysicFormComponent
   },
   {
     path: 'trainings',
