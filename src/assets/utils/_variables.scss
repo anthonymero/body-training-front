@@ -1,4 +1,11 @@
 // Colors
+
+$secondary-color: #88C6B1;
+$tertiary-color: #EDF7F5;
+$primary-color: #2b4178;
+
+$primary-background-color: rgba($primary-color, 0.05);
+
 // Breakpoints
 $breakpoints: (
     mobile: 599px,
