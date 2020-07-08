@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   isConnected = true;
+
+  @Output()
+  toggleSideNav: EventEmitter<void> = new EventEmitter<void>();
+
 
   constructor(
     private readonly authService: AuthService,
@@ -29,6 +33,10 @@ export class NavbarComponent implements OnInit {
     console.log('MyProfile');
     // TODO set route /profile
     this.router.navigate(['profile']);
+  }
+
+  onToggleSideNavMenu(): void {
+    this.toggleSideNav.emit();
   }
 
   private isUserConnected(): boolean {

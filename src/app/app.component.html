@@ -1,4 +1,17 @@
 <div class="app">
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
+  <app-navbar (toggleSideNav)="sidenav.toggle()"></app-navbar>
+
+  <mat-sidenav-container class="app-content">
+    <mat-sidenav #sidenav [mode]="over">
+      <app-side-menu (closeSideNav)="sidenav.close()"></app-side-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
 </div>
