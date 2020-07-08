@@ -1,0 +1,45 @@
+@import "../../assets/utils/variables";
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  &-left {
+    cursor: pointer;
+
+    &-logo {}
+
+    &-title {}
+  }
+
+  &-right {
+    display: flex;
+
+    &-profile {
+      cursor: pointer;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: $primary-color;
+      margin-right: 1rem;
+
+      &-letters {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        color: #fff;
+
+      }
+    }
+
+    &-logout {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+    }
+  }
+}
+
