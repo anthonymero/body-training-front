@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppMaterialModule } from '../app-material.module';
-import { SideMenuComponent } from './side-menu/side-menu.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
+import { AnatomyComponent } from './components/anatomy/anatomy.component';
 
 
 
 @NgModule({
-  declarations: [SideMenuComponent],
+  declarations: [SideMenuComponent, AnatomyComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     AppMaterialModule,
     CommonModule,
-    SideMenuComponent
+    SideMenuComponent,
+    AnatomyComponent
   ]
 })
 export class SharedModule { }

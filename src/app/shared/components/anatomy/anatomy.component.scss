@@ -1,0 +1,63 @@
+.map {
+  display: flex;
+
+  &__image {
+    background-image: url("../../../../assets/images/test01.png");
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    svg {
+      height: 100%;
+      width: 100%;
+
+      rect {
+        opacity: 0;
+        transition: opacity 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+        &:focus {
+          outline: none;
+          opacity: 1;
+          fill: red;
+        }
+      }
+    }
+  }
+
+  &__image g {
+
+    &:hover {
+      polygon {
+        opacity: 1;
+
+      }
+    }
+  }
+
+  &__image polygon {
+    // fill: #a4ced2;
+    opacity: 1;
+    // stroke-width: 1px;
+    transition: opacity 0.3s;
+
+    // &:hover {
+    //   opacity: 1;
+    // }
+  }
+
+
+  &__form {
+    width: 50%;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+  }
+}
