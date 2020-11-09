@@ -4,6 +4,7 @@ import { AppMaterialModule } from '../app-material.module';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
 import { AnatomyComponent } from './components/anatomy/anatomy.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { AnatomyComponent } from './components/anatomy/anatomy.component';
   imports: [
     CommonModule,
     RouterModule,
-    AppMaterialModule
+    AppMaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
     AppMaterialModule,
