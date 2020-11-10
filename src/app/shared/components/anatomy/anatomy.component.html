@@ -1,44 +1,35 @@
-<p>anatomy works!</p>
 
 <div class="map" id="map" #map>
 
+  <div class="map__form">
+
+    <form [formGroup]="anatomyForm" (ngSubmit)="onSubmitAnatomyForm()">
+      <mat-form-field *ngFor="let muscle of musclesToSet; let i = index">
+        <mat-label>{{muscle.name}}</mat-label>
+        <input #input matInput type='number' formControlName={{muscle.name}} id="{{muscle.name}}" min="0" max="200" value="{{muscle.size}}"
+        (click)="onActiveInput(i)">
+        <span matSuffix>cm</span>
+      </mat-form-field>
+    </form>
+
+  </div>
   <div class="map__image">
 
     <svg version="1.1" id="overlay" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="500px" height="500px"
       viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
-      <rect id="overlay03" x="43" y="129" fill="#754C24" width="407" height="348" matTooltip="top" />
-      <rect id="overlay02" x="43" y="57" fill="#A67C52" width="407" height="70" matTooltip="center" />
-      <rect id="overlay01" x="43" y="23" fill="#C69C6D" width="407" height="31" matTooltip="bottom" />
+      <rect id="overlay03" x="43" y="129" fill="#754C24" width="407" height="348" matTooltip="biceps" [ngClass]= "musclesToSet[0].isSelected ? 'active' : ''"
+        (click)="onActiveMuscle(0)" />
+      <rect id="overlay02" x="43" y="57" fill="#A67C52" width="407" height="70" matTooltip="chest" [ngClass]= "musclesToSet[1].isSelected ? 'active' : ''"
+        (click)="onActiveMuscle(1)" />
+      <rect id="overlay01" x="43" y="23" fill="#C69C6D" width="407" height="31" matTooltip="abs" [ngClass]= "musclesToSet[2].isSelected ? 'active' : ''"
+        (click)="onActiveMuscle(2)" />
     </svg>
 
   </div>
 
 
 
-  <div class="map__form">
-
-    <form [formGroup]="anatomyForm" (ngSubmit)="onSubmitAnatomyForm()">
-      <mat-form-field>
-        <mat-label>Biceps</mat-label>
-        <input matInput type="number" formControlName="biceps" id="biceps" min="10" max="100">
-        <span matSuffix>cm</span>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Biceps</mat-label>
-        <input matInput type="number" formControlName="chest" id="chest" min="80" max="200">
-        <span matSuffix>cm</span>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>abs</mat-label>
-        <input matInput type="number" formControlName="abs" id="abs" min="50" max="180">
-        <span matSuffix>cm</span>
-      </mat-form-field>
-    </form>
-
-  </div>
 
 </div>

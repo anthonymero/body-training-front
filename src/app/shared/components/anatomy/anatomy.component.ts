@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostBinding, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,30 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AnatomyComponent implements OnInit, AfterViewInit {
 
+  @ViewChildren('input') inputs: QueryList<ElementRef>;
+
   anatomyForm: FormGroup;
+  // TODO define a model
+  musclesToSet: any[] = [
+    {
+      name: 'biceps',
+      size: '10',
+      isSelected: false,
+    },
+    {
+      name: 'chest',
+      size: '80',
+      isSelected: false,
+
+    },
+    {
+      name: 'abs',
+      size: '50',
+      isSelected: false,
+
+    },
+  ];
+
 
   constructor(
     private elementRef: ElementRef,
@@ -20,11 +43,7 @@ export class AnatomyComponent implements OnInit, AfterViewInit {
       chest: [''],
       abs: [''],
     });
-   }
-
-
-
-  @ViewChild('map', { static: false }) mapRef: ElementRef;
+  }
 
 
   ngOnInit() {
@@ -34,8 +53,27 @@ export class AnatomyComponent implements OnInit, AfterViewInit {
 
   }
 
-  onSubmitAnatomyForm() {
+
+  onSubmitAnatomyForm(): void {
     // TODO
+  }
+
+  onActiveMuscle(id: number): void {
+    this.resetSelectedMuscles();
+    this.inputs.toArray()[id].nativeElement.focus();
+    this.musclesToSet[id].isSelected = true;
+
+  }
+
+  onActiveInput(id: number): void {
+    this.resetSelectedMuscles();
+    this.musclesToSet[id].isSelected = true;
+  }
+
+  private resetSelectedMuscles(): void {
+    this.musclesToSet.forEach(muscle => {
+      muscle.isSelected = false;
+    });
   }
 
 
